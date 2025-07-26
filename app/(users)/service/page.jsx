@@ -35,13 +35,13 @@ const Services = async () => {
               />
             </div>
             <h3 className="text-lg font-semibold text-center text-gray-800">
-              IImanshu Patel
+              Imanshu Patel
             </h3>
             <p className="text-sm text-gray-600 text-center mt-2">
               Frontend Developer
             </p>
             <p className="text-xs text-gray-500 text-center mt-1">
-              React & TypeScript
+              React & Node.js
             </p>
           </div>
 

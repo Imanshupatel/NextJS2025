@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function Navigation() {
     return (
-        <header className="flex justify-between h-14 items-center mt-5">
+        <header className="flex justify-between h-14 items-center pt-5 relative z-100">
             <div className="mx-10">
-                <Image src="/imanshulogo.png" alt="logo" width={180} height={100} />
+                <Image src="/logo.png" alt="logo" width={180} height={100} />
             </div>
             <nav>
                 <ul className="flex gap-6 mx-10 text-lg">

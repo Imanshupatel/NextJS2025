@@ -1,17 +1,46 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { Counter } from "./Counter";
+
+const URL = "https://jsonplaceholder.typicode.com/posts";
+
 const ClientComp = () => {
+    const [postData, setPostData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const res = await fetch(URL);
+            const data = await res.json();
+
+            //   console.log(data);
+            setPostData(data);
+
+            return data;
+        };
+
+        fetchData();
+    }, []);
+
     return (
         <>
-            <h1 className="font-roboto mt-10 ml-13">
-                Welcome, To My BattleGround Mobile Multiplayers Online Game.
-            </h1>
+            <h1>Client Comp</h1>
             <button
-                className="bg-amber-400 text-black p-1 ml-13 my-2"
-            // onClick={() => alert("Let's Play BGMI")}
+                className="bg-amber-400 text-black p-2"
+                onClick={() => alert("Welcome, To My BattleGround Mobile Multiplayers Online Game.")}
             >
                 Click Me
-
-
             </button>
+
+            <Counter />
+
+            <ul className="grid grid-cols-3 gap-5">
+                {postData.map((curElem, index) => {
+                    return <li key={index}> {curElem.body} </li>;
+                })}
+            </ul>
         </>
-    )
-}
+    );
+};
+
+export default ClientComp;
